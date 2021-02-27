@@ -18,13 +18,12 @@ mongoose.connect(
 
 // Basic Routes
 app.get('/' , (req, res) => {
-    res.send("<h1> Welcome to our API Dashboard! View http://localhost:5000/api/products to see all of our Products API! View our Github",
+    res.send("<h1> Welcome to our API Dashboard! View http://localhost:5000/user/register to login in",
     "for more information!",
     "</h1>");
 })
 
 // Components
-const ProductRoutes = require('./Routes/ProductRoutes');
 const UserRoutes = require('./Routes/UserRoutes');
 
 // Middlewares 
@@ -32,7 +31,6 @@ app.use(cors());
 app.use(express.json());
 
 // Route Middlewares
-app.use('/api', ProductRoutes);
 app.use('/user', UserRoutes);
 
 // Listening
